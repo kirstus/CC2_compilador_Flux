@@ -16,6 +16,6 @@ Para usar o ANTLR4 com python3:
 `pip install antlr4-python3-runtime`
 
 Para gerar os arquivos necessários a partir da gramática:
-`$ antlr4 -Dlanguage=Python3 la.g4 -visitor`
+`$ antlr4 -Dlanguage=Python3 flux.g4 -visitor`
 
 
