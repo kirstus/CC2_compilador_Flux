@@ -1,0 +1,4 @@
+  if(User selected Network)
+    	Boot from Network;
+  else 
+        Boot Normally;
