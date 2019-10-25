@@ -1,7 +1,9 @@
 switch ("What do you want to eat today?") {
   "Vegetarian" => "Grab a falafel";
+		break;
   "Beef" => "Grab beef kebab";
-  "Not hungry" => {
+		break;
+  "Not hungry" => 
     if ("Would you like something to drink?") {
       if ("Beer or wine") {
         "Pour drink";
@@ -11,5 +13,5 @@ switch ("What do you want to eat today?") {
     } else {
       "Let me know whenver you change your bind";
     }endif
-  }
+  break;
 }
