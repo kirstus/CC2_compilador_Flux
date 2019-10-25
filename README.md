@@ -18,4 +18,5 @@ Para usar o ANTLR4 com python3:
 Para gerar os arquivos necessários a partir da gramática:
 `$ antlr4 -Dlanguage=Python3 flux.g4 -visitor`
 
-
+Para executar um dos casos de teste:
+`$ python fluxCompiler.py casosDeTeste/{nomeDoCaso}.txt /caminho/do/arquivo/de/saida`
