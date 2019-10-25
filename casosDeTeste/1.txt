@@ -1,4 +1,5 @@
-  if(User selected Network)
-    	Boot from Network;
+  if("User selected Network")
+    	"Boot from Network";
   else 
-        Boot Normally;
+        "Boot Normally";
+  endif

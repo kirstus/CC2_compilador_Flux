@@ -1,15 +1,15 @@
-switch (What do you want to eat today?) {
-  Vegetarian => Grab a falafel;
-  Beef => Grab beef kebab;
-  Not hungry => {
-    if (Would you like something to drink?) {
-      if (Beer or wine) {
-        Pour drink;
+switch ("What do you want to eat today?") {
+  "Vegetarian" => "Grab a falafel";
+  "Beef" => "Grab beef kebab";
+  "Not hungry" => {
+    if ("Would you like something to drink?") {
+      if ("Beer or wine") {
+        "Pour drink";
       } else {
-        Pour water;
-      }
+        "Pour water";
+      }endif
     } else {
-      Let me know whenver you change your bind;
-    }
+      "Let me know whenver you change your bind";
+    }endif
   }
 }

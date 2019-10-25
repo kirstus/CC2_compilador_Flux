@@ -1,6 +1,6 @@
-Booting of computer.;
-if(User pressed `DEL`) {
-  Show BIOS;
+"Booting of computer.";
+if("User pressed `DEL`") {
+  "Show BIOS";
   return;
-}
-Normal boot;
+}endif
+"Normal boot";
