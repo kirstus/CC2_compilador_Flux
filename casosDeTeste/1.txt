@@ -1,5 +1,5 @@
-  if("User selected Network")
+if("User selected Network") {
     	"Boot from Network";
-  else 
+} else {
         "Boot Normally";
-  endif
+} endif

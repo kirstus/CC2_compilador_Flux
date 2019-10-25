@@ -1,0 +1,6 @@
+"Booting of computer.";
+if("User pressed `DEL`") {
+  "Show BIOS";
+  return;
+}
+"Normal boot";

@@ -1,7 +1,7 @@
-Client enters;
+"Client enters";
 before_check:
-if(!Client happy?) {
-  Smile more and be nicer;
+if("Client happy?") {
+  "Smile more and be nicer";
   loop before_check;
-}
-Client leaves;
+} endif
+"Client leaves";
