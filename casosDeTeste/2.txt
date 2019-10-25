@@ -1,7 +1,9 @@
-  if(User selected Network)
-    	Boot from Network;
+  if("User selected Network")
+    	"Boot from Network";
   else    
-	if (PC is broken)
-		Shutdown ;
+	if ("PC is broken")
+		"Shutdown" ;
 	else
-        Boot Normally;
+        "Boot Normally";
+	endif
+endif

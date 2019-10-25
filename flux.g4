@@ -9,19 +9,17 @@ cmdSe : 'if' {print('if')}condição {print('aqui')}  caixa {print('saiusubgrafo
 cmdElse:  {print('else')} 'else' caixa;
 cmdSwitch : {print('switch')}'switch' condição '{' casos '}';
 casos : caso+ implicação?;
-caso : FRASE {print($FRASE)}implicação;
+caso : STRING {print($STRING)}implicação;
 implicação : OPSETA caixa ('break' ';')?;
-condição : '(' FRASE ')' {print('condicao',$FRASE)}| FRASE{print('condicao',$FRASE)};
+condição : '(' STRING ')' {print('condicao',$STRING)}| STRING{print('condicao',$STRING)};
 subgrafo : {print('subgrafo')}'{'  grafo '}';
 label : NOME_LABEL ':' {print('LABEL:',$NOME_LABEL)};
 loop : 'goto' NOME_LABEL {print('goto: ',$NOME_LABEL)} | loop NOME_LABEL {print('loop: ',$NOME_LABEL)};
-ação : FRASE {print('acao',$FRASE)}('['FRASE']')? ';';
+ação : STRING {print('acao',$STRING)}('['STRING']')? ';';
 
 OPSETA: '=>' ;
 STRING : '"' ~('"')* '"';
 NOME_LABEL : ([a-zA-Z] | '_')( [a-zA-Z] | [0-9] | '_')*;
-FRASE : PALAVRA  (' ' PALAVRA)*  ;
-fragment PALAVRA : ~(' '|'('|')'|'\n'|';'|'{'|'}'|'['|']'|'\r'|'\t'|'='|'>'|':')+ ;
 WS : [ \t\r\n]+ -> skip ;
 
 ErrorChar: .;
