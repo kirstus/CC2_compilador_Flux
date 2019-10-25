@@ -1,14 +1,16 @@
 "Booting of computer.";
 if("User is holding `F1`") {
-  "Display booting menu";
-  if("User selected **Network**")
-    "Boot from Network";
-  else 
-	if("User selected **CDROM**")
-    "Boot from CDROM";
-  else
-    "Boot from default";
-}
-else
-  "Boot from hard drive";
+	"Display booting menu";
+	if("User selected **Network**") {
+		"Boot from Network";
+	} else {
+		if("User selected **CDROM**") {
+			"Boot from CDROM";
+  		} else {
+    			"Boot from default";
+		} endif
+	} endif
+} else {
+	"Boot from hard drive";
+} endif
 "End of booting";
