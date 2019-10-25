@@ -8,56 +8,54 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\26")
-        buf.write("\u0096\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\27")
+        buf.write("\u0092\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\6\2%\n\2\r")
         buf.write("\2\16\2&\3\2\3\2\3\2\3\3\3\3\6\3.\n\3\r\3\16\3/\3\3\5")
-        buf.write("\3\63\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4<\n\4\3\5\3\5")
-        buf.write("\5\5@\n\5\3\6\3\6\3\6\3\6\3\6\3\6\5\6H\n\6\3\7\3\7\3\7")
-        buf.write("\3\7\3\7\3\7\3\7\5\7Q\n\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t")
-        buf.write("\3\t\3\t\3\t\3\t\3\t\3\t\3\n\6\na\n\n\r\n\16\nb\3\n\5")
-        buf.write("\nf\n\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\fp\n\f\3")
-        buf.write("\r\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\17\3\17")
-        buf.write("\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20")
-        buf.write("\u0088\n\20\f\20\16\20\u008b\13\20\3\21\3\21\3\21\3\21")
-        buf.write("\3\21\5\21\u0092\n\21\3\21\3\21\3\21\2\3\36\22\2\4\6\b")
-        buf.write("\n\f\16\20\22\24\26\30\32\34\36 \2\2\2\u0094\2\"\3\2\2")
-        buf.write("\2\4+\3\2\2\2\6;\3\2\2\2\b?\3\2\2\2\nG\3\2\2\2\fI\3\2")
-        buf.write("\2\2\16T\3\2\2\2\20X\3\2\2\2\22`\3\2\2\2\24g\3\2\2\2\26")
-        buf.write("k\3\2\2\2\30q\3\2\2\2\32v\3\2\2\2\34{\3\2\2\2\36\177\3")
-        buf.write("\2\2\2 \u008c\3\2\2\2\"$\b\2\1\2#%\5\4\3\2$#\3\2\2\2%")
-        buf.write("&\3\2\2\2&$\3\2\2\2&\'\3\2\2\2\'(\3\2\2\2()\b\2\1\2)*")
-        buf.write("\7\2\2\3*\3\3\2\2\2+-\b\3\1\2,.\5\6\4\2-,\3\2\2\2./\3")
-        buf.write("\2\2\2/-\3\2\2\2/\60\3\2\2\2\60\62\3\2\2\2\61\63\5\n\6")
-        buf.write("\2\62\61\3\2\2\2\62\63\3\2\2\2\63\5\3\2\2\2\64\65\b\4")
-        buf.write("\1\2\65<\5\b\5\2\66<\5\34\17\2\67<\5\36\20\289\b\4\1\2")
-        buf.write("9<\5 \21\2:<\5\32\16\2;\64\3\2\2\2;\66\3\2\2\2;\67\3\2")
-        buf.write("\2\2;8\3\2\2\2;:\3\2\2\2<\7\3\2\2\2=@\5\f\7\2>@\5\20\t")
-        buf.write("\2?=\3\2\2\2?>\3\2\2\2@\t\3\2\2\2AB\b\6\1\2BC\7\3\2\2")
-        buf.write("CH\7\4\2\2DE\b\6\1\2EF\7\3\2\2FH\5\6\4\2GA\3\2\2\2GD\3")
-        buf.write("\2\2\2H\13\3\2\2\2IJ\7\5\2\2JK\b\7\1\2KL\5\30\r\2LM\b")
-        buf.write("\7\1\2MN\5\6\4\2NP\b\7\1\2OQ\5\16\b\2PO\3\2\2\2PQ\3\2")
-        buf.write("\2\2QR\3\2\2\2RS\7\6\2\2S\r\3\2\2\2TU\b\b\1\2UV\7\7\2")
-        buf.write("\2VW\5\6\4\2W\17\3\2\2\2XY\b\t\1\2YZ\7\b\2\2Z[\5\30\r")
-        buf.write("\2[\\\7\t\2\2\\]\5\22\n\2]^\7\n\2\2^\21\3\2\2\2_a\5\24")
-        buf.write("\13\2`_\3\2\2\2ab\3\2\2\2b`\3\2\2\2bc\3\2\2\2ce\3\2\2")
-        buf.write("\2df\5\26\f\2ed\3\2\2\2ef\3\2\2\2f\23\3\2\2\2gh\7\23\2")
-        buf.write("\2hi\b\13\1\2ij\5\26\f\2j\25\3\2\2\2kl\7\22\2\2lo\5\6")
-        buf.write("\4\2mn\7\13\2\2np\7\4\2\2om\3\2\2\2op\3\2\2\2p\27\3\2")
-        buf.write("\2\2qr\7\f\2\2rs\7\23\2\2st\7\r\2\2tu\b\r\1\2u\31\3\2")
-        buf.write("\2\2vw\b\16\1\2wx\7\t\2\2xy\5\4\3\2yz\7\n\2\2z\33\3\2")
-        buf.write("\2\2{|\7\24\2\2|}\7\16\2\2}~\b\17\1\2~\35\3\2\2\2\177")
-        buf.write("\u0080\b\20\1\2\u0080\u0081\7\17\2\2\u0081\u0082\7\24")
-        buf.write("\2\2\u0082\u0083\b\20\1\2\u0083\u0089\3\2\2\2\u0084\u0085")
-        buf.write("\f\3\2\2\u0085\u0086\7\24\2\2\u0086\u0088\b\20\1\2\u0087")
-        buf.write("\u0084\3\2\2\2\u0088\u008b\3\2\2\2\u0089\u0087\3\2\2\2")
-        buf.write("\u0089\u008a\3\2\2\2\u008a\37\3\2\2\2\u008b\u0089\3\2")
-        buf.write("\2\2\u008c\u008d\7\23\2\2\u008d\u0091\b\21\1\2\u008e\u008f")
-        buf.write("\7\20\2\2\u008f\u0090\7\23\2\2\u0090\u0092\7\21\2\2\u0091")
-        buf.write("\u008e\3\2\2\2\u0091\u0092\3\2\2\2\u0092\u0093\3\2\2\2")
-        buf.write("\u0093\u0094\7\4\2\2\u0094!\3\2\2\2\16&/\62;?GPbeo\u0089")
-        buf.write("\u0091")
+        buf.write("\3\63\n\3\3\4\3\4\3\4\3\4\3\4\3\4\5\4;\n\4\3\5\3\5\5\5")
+        buf.write("?\n\5\3\6\3\6\3\6\3\6\3\6\3\6\5\6G\n\6\3\7\3\7\3\7\3\7")
+        buf.write("\3\7\3\7\3\7\5\7P\n\7\3\7\3\7\3\b\3\b\3\b\3\b\3\t\3\t")
+        buf.write("\3\t\3\t\3\t\3\t\3\t\3\n\6\n`\n\n\r\n\16\na\3\n\5\ne\n")
+        buf.write("\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\fo\n\f\3\r\3")
+        buf.write("\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\17\3\17\3\17")
+        buf.write("\3\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5\20\u0087")
+        buf.write("\n\20\3\21\3\21\3\21\3\21\3\21\5\21\u008e\n\21\3\21\3")
+        buf.write("\21\3\21\2\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36")
+        buf.write(" \2\2\2\u008f\2\"\3\2\2\2\4+\3\2\2\2\6:\3\2\2\2\b>\3\2")
+        buf.write("\2\2\nF\3\2\2\2\fH\3\2\2\2\16S\3\2\2\2\20W\3\2\2\2\22")
+        buf.write("_\3\2\2\2\24f\3\2\2\2\26j\3\2\2\2\30p\3\2\2\2\32u\3\2")
+        buf.write("\2\2\34z\3\2\2\2\36\u0086\3\2\2\2 \u0088\3\2\2\2\"$\b")
+        buf.write("\2\1\2#%\5\4\3\2$#\3\2\2\2%&\3\2\2\2&$\3\2\2\2&\'\3\2")
+        buf.write("\2\2\'(\3\2\2\2()\b\2\1\2)*\7\2\2\3*\3\3\2\2\2+-\b\3\1")
+        buf.write("\2,.\5\6\4\2-,\3\2\2\2./\3\2\2\2/-\3\2\2\2/\60\3\2\2\2")
+        buf.write("\60\62\3\2\2\2\61\63\5\n\6\2\62\61\3\2\2\2\62\63\3\2\2")
+        buf.write("\2\63\5\3\2\2\2\64\65\b\4\1\2\65;\5\b\5\2\66;\5\34\17")
+        buf.write("\2\67;\5\36\20\289\b\4\1\29;\5 \21\2:\64\3\2\2\2:\66\3")
+        buf.write("\2\2\2:\67\3\2\2\2:8\3\2\2\2;\7\3\2\2\2<?\5\f\7\2=?\5")
+        buf.write("\20\t\2><\3\2\2\2>=\3\2\2\2?\t\3\2\2\2@A\b\6\1\2AB\7\3")
+        buf.write("\2\2BG\7\4\2\2CD\b\6\1\2DE\7\3\2\2EG\5\6\4\2F@\3\2\2\2")
+        buf.write("FC\3\2\2\2G\13\3\2\2\2HI\7\5\2\2IJ\b\7\1\2JK\5\30\r\2")
+        buf.write("KL\b\7\1\2LM\5\32\16\2MO\b\7\1\2NP\5\16\b\2ON\3\2\2\2")
+        buf.write("OP\3\2\2\2PQ\3\2\2\2QR\7\6\2\2R\r\3\2\2\2ST\b\b\1\2TU")
+        buf.write("\7\7\2\2UV\5\32\16\2V\17\3\2\2\2WX\b\t\1\2XY\7\b\2\2Y")
+        buf.write("Z\5\30\r\2Z[\7\t\2\2[\\\5\22\n\2\\]\7\n\2\2]\21\3\2\2")
+        buf.write("\2^`\5\24\13\2_^\3\2\2\2`a\3\2\2\2a_\3\2\2\2ab\3\2\2\2")
+        buf.write("bd\3\2\2\2ce\5\26\f\2dc\3\2\2\2de\3\2\2\2e\23\3\2\2\2")
+        buf.write("fg\7\24\2\2gh\b\13\1\2hi\5\26\f\2i\25\3\2\2\2jk\7\23\2")
+        buf.write("\2kn\5\32\16\2lm\7\13\2\2mo\7\4\2\2nl\3\2\2\2no\3\2\2")
+        buf.write("\2o\27\3\2\2\2pq\7\f\2\2qr\7\24\2\2rs\7\r\2\2st\b\r\1")
+        buf.write("\2t\31\3\2\2\2uv\b\16\1\2vw\7\t\2\2wx\5\4\3\2xy\7\n\2")
+        buf.write("\2y\33\3\2\2\2z{\7\25\2\2{|\7\16\2\2|}\b\17\1\2}\35\3")
+        buf.write("\2\2\2~\177\7\17\2\2\177\u0080\7\25\2\2\u0080\u0081\b")
+        buf.write("\20\1\2\u0081\u0087\7\4\2\2\u0082\u0083\7\20\2\2\u0083")
+        buf.write("\u0084\7\25\2\2\u0084\u0085\7\4\2\2\u0085\u0087\b\20\1")
+        buf.write("\2\u0086~\3\2\2\2\u0086\u0082\3\2\2\2\u0087\37\3\2\2\2")
+        buf.write("\u0088\u0089\7\24\2\2\u0089\u008d\b\21\1\2\u008a\u008b")
+        buf.write("\7\21\2\2\u008b\u008c\7\24\2\2\u008c\u008e\7\22\2\2\u008d")
+        buf.write("\u008a\3\2\2\2\u008d\u008e\3\2\2\2\u008e\u008f\3\2\2\2")
+        buf.write("\u008f\u0090\7\4\2\2\u0090!\3\2\2\2\16&/\62:>FOadn\u0086")
+        buf.write("\u008d")
         return buf.getvalue()
 
 
@@ -73,13 +71,14 @@ class fluxParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'return'", "';'", "'if'", "'endif'", 
                      "'else'", "'switch'", "'{'", "'}'", "'break'", "'('", 
-                     "')'", "':'", "'goto'", "'['", "']'", "'=>'" ]
+                     "')'", "':'", "'goto'", "'loop'", "'['", "']'", "'=>'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "OPSETA", "STRING", "NOME_LABEL", "WS", "ErrorChar" ]
+                      "<INVALID>", "OPSETA", "STRING", "NOME_LABEL", "WS", 
+                      "ErrorChar" ]
 
     RULE_fluxograma = 0
     RULE_grafo = 1
@@ -118,11 +117,12 @@ class fluxParser ( Parser ):
     T__12=13
     T__13=14
     T__14=15
-    OPSETA=16
-    STRING=17
-    NOME_LABEL=18
-    WS=19
-    ErrorChar=20
+    T__15=16
+    OPSETA=17
+    STRING=18
+    NOME_LABEL=19
+    WS=20
+    ErrorChar=21
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -186,7 +186,7 @@ class fluxParser ( Parser ):
                 self.state = 36 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fluxParser.T__2) | (1 << fluxParser.T__5) | (1 << fluxParser.T__6) | (1 << fluxParser.T__12) | (1 << fluxParser.STRING) | (1 << fluxParser.NOME_LABEL))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fluxParser.T__2) | (1 << fluxParser.T__5) | (1 << fluxParser.T__12) | (1 << fluxParser.T__13) | (1 << fluxParser.STRING) | (1 << fluxParser.NOME_LABEL))) != 0)):
                     break
 
             print('Fim')
@@ -299,10 +299,6 @@ class fluxParser ( Parser ):
             return self.getTypedRuleContext(fluxParser.AcaoContext,0)
 
 
-        def subgrafo(self):
-            return self.getTypedRuleContext(fluxParser.SubgrafoContext,0)
-
-
         def getRuleIndex(self):
             return fluxParser.RULE_caixa
 
@@ -328,7 +324,7 @@ class fluxParser ( Parser ):
         localctx = fluxParser.CaixaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_caixa)
         try:
-            self.state = 57
+            self.state = 56
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [fluxParser.T__2, fluxParser.T__5]:
@@ -342,21 +338,16 @@ class fluxParser ( Parser ):
                 self.state = 52
                 self.label()
                 pass
-            elif token in [fluxParser.T__12]:
+            elif token in [fluxParser.T__12, fluxParser.T__13]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 53
-                self.loop(0)
+                self.loop()
                 pass
             elif token in [fluxParser.STRING]:
                 self.enterOuterAlt(localctx, 4)
                 print('caixacao')
                 self.state = 55
                 self.acao()
-                pass
-            elif token in [fluxParser.T__6]:
-                self.enterOuterAlt(localctx, 5)
-                self.state = 56
-                self.subgrafo()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -409,17 +400,17 @@ class fluxParser ( Parser ):
         localctx = fluxParser.DecisaoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_decisao)
         try:
-            self.state = 61
+            self.state = 60
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [fluxParser.T__2]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 59
+                self.state = 58
                 self.cmdSe()
                 pass
             elif token in [fluxParser.T__5]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 60
+                self.state = 59
                 self.cmdSwitch()
                 pass
             else:
@@ -469,24 +460,24 @@ class fluxParser ( Parser ):
         localctx = fluxParser.RetornoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_retorno)
         try:
-            self.state = 69
+            self.state = 68
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 print('return1')
-                self.state = 64
+                self.state = 63
                 self.match(fluxParser.T__0)
-                self.state = 65
+                self.state = 64
                 self.match(fluxParser.T__1)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 print('return1')
-                self.state = 67
+                self.state = 66
                 self.match(fluxParser.T__0)
-                self.state = 68
+                self.state = 67
                 self.caixa()
                 pass
 
@@ -510,8 +501,8 @@ class fluxParser ( Parser ):
             return self.getTypedRuleContext(fluxParser.CondicaoContext,0)
 
 
-        def caixa(self):
-            return self.getTypedRuleContext(fluxParser.CaixaContext,0)
+        def subgrafo(self):
+            return self.getTypedRuleContext(fluxParser.SubgrafoContext,0)
 
 
         def cmdElse(self):
@@ -545,24 +536,24 @@ class fluxParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 71
+            self.state = 70
             self.match(fluxParser.T__2)
             print('if')
-            self.state = 73
+            self.state = 72
             self.condicao()
             print('aqui')
-            self.state = 75
-            self.caixa()
+            self.state = 74
+            self.subgrafo()
             print('saiusubgrafo')
-            self.state = 78
+            self.state = 77
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==fluxParser.T__4:
-                self.state = 77
+                self.state = 76
                 self.cmdElse()
 
 
-            self.state = 80
+            self.state = 79
             self.match(fluxParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
@@ -579,8 +570,8 @@ class fluxParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def caixa(self):
-            return self.getTypedRuleContext(fluxParser.CaixaContext,0)
+        def subgrafo(self):
+            return self.getTypedRuleContext(fluxParser.SubgrafoContext,0)
 
 
         def getRuleIndex(self):
@@ -610,10 +601,10 @@ class fluxParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             print('else')
-            self.state = 83
+            self.state = 82
             self.match(fluxParser.T__4)
-            self.state = 84
-            self.caixa()
+            self.state = 83
+            self.subgrafo()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -664,15 +655,15 @@ class fluxParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             print('switch')
-            self.state = 87
+            self.state = 86
             self.match(fluxParser.T__5)
-            self.state = 88
+            self.state = 87
             self.condicao()
-            self.state = 89
+            self.state = 88
             self.match(fluxParser.T__6)
-            self.state = 90
+            self.state = 89
             self.casos()
-            self.state = 91
+            self.state = 90
             self.match(fluxParser.T__7)
         except RecognitionException as re:
             localctx.exception = re
@@ -727,23 +718,23 @@ class fluxParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 94 
+            self.state = 93 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 93
+                self.state = 92
                 self.caso()
-                self.state = 96 
+                self.state = 95 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==fluxParser.STRING):
                     break
 
-            self.state = 99
+            self.state = 98
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==fluxParser.OPSETA:
-                self.state = 98
+                self.state = 97
                 self.implicacao()
 
 
@@ -796,10 +787,10 @@ class fluxParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_caso)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 101
+            self.state = 100
             localctx._STRING = self.match(fluxParser.STRING)
             print(localctx._STRING)
-            self.state = 103
+            self.state = 102
             self.implicacao()
         except RecognitionException as re:
             localctx.exception = re
@@ -819,8 +810,8 @@ class fluxParser ( Parser ):
         def OPSETA(self):
             return self.getToken(fluxParser.OPSETA, 0)
 
-        def caixa(self):
-            return self.getTypedRuleContext(fluxParser.CaixaContext,0)
+        def subgrafo(self):
+            return self.getTypedRuleContext(fluxParser.SubgrafoContext,0)
 
 
         def getRuleIndex(self):
@@ -850,17 +841,17 @@ class fluxParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 105
+            self.state = 104
             self.match(fluxParser.OPSETA)
-            self.state = 106
-            self.caixa()
-            self.state = 109
+            self.state = 105
+            self.subgrafo()
+            self.state = 108
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==fluxParser.T__8:
-                self.state = 107
+                self.state = 106
                 self.match(fluxParser.T__8)
-                self.state = 108
+                self.state = 107
                 self.match(fluxParser.T__1)
 
 
@@ -909,11 +900,11 @@ class fluxParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_condicao)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
+            self.state = 110
             self.match(fluxParser.T__9)
-            self.state = 112
+            self.state = 111
             localctx._STRING = self.match(fluxParser.STRING)
-            self.state = 113
+            self.state = 112
             self.match(fluxParser.T__10)
             print('condicao',localctx._STRING)
         except RecognitionException as re:
@@ -962,11 +953,11 @@ class fluxParser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             print('subgrafo')
-            self.state = 117
+            self.state = 116
             self.match(fluxParser.T__6)
-            self.state = 118
+            self.state = 117
             self.grafo()
-            self.state = 119
+            self.state = 118
             self.match(fluxParser.T__7)
         except RecognitionException as re:
             localctx.exception = re
@@ -1013,9 +1004,9 @@ class fluxParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_label)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 121
+            self.state = 120
             localctx._NOME_LABEL = self.match(fluxParser.NOME_LABEL)
-            self.state = 122
+            self.state = 121
             self.match(fluxParser.T__11)
             print('LABEL:',localctx._NOME_LABEL)
         except RecognitionException as re:
@@ -1037,10 +1028,6 @@ class fluxParser ( Parser ):
         def NOME_LABEL(self):
             return self.getToken(fluxParser.NOME_LABEL, 0)
 
-        def loop(self):
-            return self.getTypedRuleContext(fluxParser.LoopContext,0)
-
-
         def getRuleIndex(self):
             return fluxParser.RULE_loop
 
@@ -1060,48 +1047,44 @@ class fluxParser ( Parser ):
 
 
 
-    def loop(self, _p:int=0):
-        _parentctx = self._ctx
-        _parentState = self.state
-        localctx = fluxParser.LoopContext(self, self._ctx, _parentState)
-        _prevctx = localctx
-        _startState = 28
-        self.enterRecursionRule(localctx, 28, self.RULE_loop, _p)
+
+    def loop(self):
+
+        localctx = fluxParser.LoopContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_loop)
         try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 126
-            self.match(fluxParser.T__12)
-            self.state = 127
-            localctx._NOME_LABEL = self.match(fluxParser.NOME_LABEL)
-            print('goto: ',localctx._NOME_LABEL)
-            self._ctx.stop = self._input.LT(-1)
-            self.state = 135
+            self.state = 132
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
-            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                if _alt==1:
-                    if self._parseListeners is not None:
-                        self.triggerExitRuleEvent()
-                    _prevctx = localctx
-                    localctx = fluxParser.LoopContext(self, _parentctx, _parentState)
-                    self.pushNewRecursionContext(localctx, _startState, self.RULE_loop)
-                    self.state = 130
-                    if not self.precpred(self._ctx, 1):
-                        from antlr4.error.Errors import FailedPredicateException
-                        raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 131
-                    localctx._NOME_LABEL = self.match(fluxParser.NOME_LABEL)
-                    print('loop: ',localctx._NOME_LABEL) 
-                self.state = 137
-                self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
+            token = self._input.LA(1)
+            if token in [fluxParser.T__12]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 124
+                self.match(fluxParser.T__12)
+                self.state = 125
+                localctx._NOME_LABEL = self.match(fluxParser.NOME_LABEL)
+                print('goto: ',localctx._NOME_LABEL)
+                self.state = 127
+                self.match(fluxParser.T__1)
+                pass
+            elif token in [fluxParser.T__13]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 128
+                self.match(fluxParser.T__13)
+                self.state = 129
+                localctx._NOME_LABEL = self.match(fluxParser.NOME_LABEL)
+                self.state = 130
+                self.match(fluxParser.T__1)
+                print('loop: ',localctx._NOME_LABEL)
+                pass
+            else:
+                raise NoViableAltException(self)
 
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.unrollRecursionContexts(_parentctx)
+            self.exitRule()
         return localctx
 
 
@@ -1145,22 +1128,22 @@ class fluxParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 138
+            self.state = 134
             localctx._STRING = self.match(fluxParser.STRING)
             print('acao',localctx._STRING)
-            self.state = 143
+            self.state = 139
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==fluxParser.T__13:
-                self.state = 140
-                self.match(fluxParser.T__13)
-                self.state = 141
-                localctx._STRING = self.match(fluxParser.STRING)
-                self.state = 142
+            if _la==fluxParser.T__14:
+                self.state = 136
                 self.match(fluxParser.T__14)
+                self.state = 137
+                localctx._STRING = self.match(fluxParser.STRING)
+                self.state = 138
+                self.match(fluxParser.T__15)
 
 
-            self.state = 145
+            self.state = 141
             self.match(fluxParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -1170,22 +1153,6 @@ class fluxParser ( Parser ):
             self.exitRule()
         return localctx
 
-
-
-    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
-        if self._predicates == None:
-            self._predicates = dict()
-        self._predicates[14] = self.loop_sempred
-        pred = self._predicates.get(ruleIndex, None)
-        if pred is None:
-            raise Exception("No predicate with index:" + str(ruleIndex))
-        else:
-            return pred(localctx, predIndex)
-
-    def loop_sempred(self, localctx:LoopContext, predIndex:int):
-            if predIndex == 0:
-                return self.precpred(self._ctx, 1)
-         
 
 
 
