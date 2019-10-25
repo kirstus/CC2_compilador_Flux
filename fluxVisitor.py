@@ -24,8 +24,8 @@ class fluxVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by fluxParser#decisão.
-    def visitDecisão(self, ctx:fluxParser.DecisãoContext):
+    # Visit a parse tree produced by fluxParser#decisao.
+    def visitDecisao(self, ctx:fluxParser.DecisaoContext):
         return self.visitChildren(ctx)
 
 
@@ -59,13 +59,13 @@ class fluxVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by fluxParser#implicação.
-    def visitImplicação(self, ctx:fluxParser.ImplicaçãoContext):
+    # Visit a parse tree produced by fluxParser#implicacao.
+    def visitImplicacao(self, ctx:fluxParser.ImplicacaoContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by fluxParser#condição.
-    def visitCondição(self, ctx:fluxParser.CondiçãoContext):
+    # Visit a parse tree produced by fluxParser#condicao.
+    def visitCondicao(self, ctx:fluxParser.CondicaoContext):
         return self.visitChildren(ctx)
 
 
@@ -84,8 +84,8 @@ class fluxVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by fluxParser#ação.
-    def visitAção(self, ctx:fluxParser.AçãoContext):
+    # Visit a parse tree produced by fluxParser#acao.
+    def visitAcao(self, ctx:fluxParser.AcaoContext):
         return self.visitChildren(ctx)
 
 

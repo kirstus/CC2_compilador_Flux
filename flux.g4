@@ -1,21 +1,21 @@
 grammar flux;
 
-fluxograma : {print('fluxograma')} grafo+ {print('cabou')}EOF ;
+fluxograma : {print('fluxograma')} grafo+ {print('Fim')}EOF ;
 grafo : {print('grafo')}caixa+ retorno?;
-caixa :  {print('caixadecisao')}decisão | label | loop | {print('caixacao')}ação | subgrafo;
-decisão : cmdSe | cmdSwitch;
+caixa :  {print('caixadecisao')}decisao | label | loop | {print('caixacao')}acao | subgrafo;
+decisao : cmdSe | cmdSwitch;
 retorno : {print('return1')} 'return' ';' | {print('return1')}'return' caixa;
-cmdSe : 'if' {print('if')}condição {print('aqui')}  caixa {print('saiusubgrafo')}cmdElse? 'endif';
+cmdSe : 'if' {print('if')}condicao {print('aqui')}  caixa {print('saiusubgrafo')}cmdElse? 'endif';
 cmdElse:  {print('else')} 'else' caixa;
-cmdSwitch : {print('switch')}'switch' condição '{' casos '}';
-casos : caso+ implicação?;
-caso : STRING {print($STRING)}implicação;
-implicação : OPSETA caixa ('break' ';')?;
-condição : '(' STRING ')' {print('condicao',$STRING)}| STRING{print('condicao',$STRING)};
+cmdSwitch : {print('switch')}'switch' condicao '{' casos '}';
+casos : caso+ implicacao?;
+caso : STRING {print($STRING)}implicacao;
+implicacao : OPSETA caixa ('break' ';')?;
+condicao : '(' STRING ')' {print('condicao',$STRING)};
 subgrafo : {print('subgrafo')}'{'  grafo '}';
 label : NOME_LABEL ':' {print('LABEL:',$NOME_LABEL)};
 loop : 'goto' NOME_LABEL {print('goto: ',$NOME_LABEL)} | loop NOME_LABEL {print('loop: ',$NOME_LABEL)};
-ação : STRING {print('acao',$STRING)}('['STRING']')? ';';
+acao : STRING {print('acao',$STRING)}('['STRING']')? ';';
 
 OPSETA: '=>' ;
 STRING : '"' ~('"')* '"';

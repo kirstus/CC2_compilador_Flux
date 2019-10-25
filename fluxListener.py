@@ -35,12 +35,12 @@ class fluxListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by fluxParser#decisão.
-    def enterDecisão(self, ctx:fluxParser.DecisãoContext):
+    # Enter a parse tree produced by fluxParser#decisao.
+    def enterDecisao(self, ctx:fluxParser.DecisaoContext):
         pass
 
-    # Exit a parse tree produced by fluxParser#decisão.
-    def exitDecisão(self, ctx:fluxParser.DecisãoContext):
+    # Exit a parse tree produced by fluxParser#decisao.
+    def exitDecisao(self, ctx:fluxParser.DecisaoContext):
         pass
 
 
@@ -98,21 +98,21 @@ class fluxListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by fluxParser#implicação.
-    def enterImplicação(self, ctx:fluxParser.ImplicaçãoContext):
+    # Enter a parse tree produced by fluxParser#implicacao.
+    def enterImplicacao(self, ctx:fluxParser.ImplicacaoContext):
         pass
 
-    # Exit a parse tree produced by fluxParser#implicação.
-    def exitImplicação(self, ctx:fluxParser.ImplicaçãoContext):
+    # Exit a parse tree produced by fluxParser#implicacao.
+    def exitImplicacao(self, ctx:fluxParser.ImplicacaoContext):
         pass
 
 
-    # Enter a parse tree produced by fluxParser#condição.
-    def enterCondição(self, ctx:fluxParser.CondiçãoContext):
+    # Enter a parse tree produced by fluxParser#condicao.
+    def enterCondicao(self, ctx:fluxParser.CondicaoContext):
         pass
 
-    # Exit a parse tree produced by fluxParser#condição.
-    def exitCondição(self, ctx:fluxParser.CondiçãoContext):
+    # Exit a parse tree produced by fluxParser#condicao.
+    def exitCondicao(self, ctx:fluxParser.CondicaoContext):
         pass
 
 
@@ -143,12 +143,12 @@ class fluxListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by fluxParser#ação.
-    def enterAção(self, ctx:fluxParser.AçãoContext):
+    # Enter a parse tree produced by fluxParser#acao.
+    def enterAcao(self, ctx:fluxParser.AcaoContext):
         pass
 
-    # Exit a parse tree produced by fluxParser#ação.
-    def exitAção(self, ctx:fluxParser.AçãoContext):
+    # Exit a parse tree produced by fluxParser#acao.
+    def exitAcao(self, ctx:fluxParser.AcaoContext):
         pass
 
 
