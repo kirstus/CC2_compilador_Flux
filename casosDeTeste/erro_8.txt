@@ -2,5 +2,5 @@
 label:
 if("condicao?") {
   "resposta";
-  goto label;
+  goto "label";
 }endif

@@ -13,7 +13,7 @@ class fluxErrorHandler(ErrorListener):
 		value = o.text
 		#mapeia o tipo de erro sintático ou lexico que aparece
 		message = msg
-		print(message)
+		#print(message)
 		if(message[0:11] == "missing '{'"):
 			print("Linha " + str(line-1) + ": Condicional não foi aberto corretamente")
 		elif(message[0:11] == "missing '}'" or "expecting {'endif', 'else'}" in message):
@@ -25,7 +25,10 @@ class fluxErrorHandler(ErrorListener):
 		elif(message[0:10] == "extraneous"):
 			print("Linha " + str(line) + ": " + value + " - simbolo nao identificado")
 			self.output.write("Linha " + str(line) + ": " + value + " - simbolo nao identificado\n")
-
+		elif(message[18:22] == "goto"):
+			print("Linha " + str(line) + ": comando goto deve receber um label")
+		elif(message[0:10] == "mismatched"):
+			print("Linha " + str(line) + ": esperando STRING, recebeu " + value)
 		self.output.write("Fim da compilacao\n")
 		#print("Fim da compilacao")
 		exit()	
