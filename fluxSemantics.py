@@ -71,15 +71,24 @@ class fluxSemantics(fluxVisitor):
 	# Visit a parse tree produced by fluxParser#casos.
 
 	def visitCasos(self, ctx:fluxParser.CasosContext):
-		for case in ctx.caso():
-			self.visitCaso(case)
-		if(ctx.implicacao() != None):
-			self.visitImplicacao(ctx.implicacao()) 
+		if(len(ctx.caso()) < 2):
+			self.errors += "Linha " + str(ctx.caso(0).start.line) + ": switches tem de ter ao menos dois casos.\n"
+		else:
+			tabelaCasos = {}
+			for case in ctx.caso():
+				caseName = self.visitCaso(case)
+				if(caseName not in tabelaCasos.keys()):
+					tabelaCasos[caseName] = True
+				else:
+					self.errors += "Linha " + str(case.start.line) + ": caso já definido anteriormente.\n"
+			if(ctx.implicacao() != None):
+				self.visitImplicacao(ctx.implicacao()) 
 
 	# Visit a parse tree produced by fluxParser#caso.
 
 	def visitCaso(self, ctx:fluxParser.CasoContext):
 		self.visitImplicacao(ctx.implicacao())
+		return ctx.STRING().getText()
 
 	# Visit a parse tree produced by fluxParser#implicacao.
 
@@ -89,7 +98,7 @@ class fluxSemantics(fluxVisitor):
 	# Visit a parse tree produced by fluxParser#condicao.
 
 	def visitCondicao(self, ctx:fluxParser.CondicaoContext):
-		print(ctx.getText())
+		return
 
 	# Visit a parse tree produced by fluxParser#subgrafo.
 
@@ -99,14 +108,19 @@ class fluxSemantics(fluxVisitor):
 	# Visit a parse tree produced by fluxParser#label.
 
 	def visitLabel(self, ctx:fluxParser.LabelContext):
-		print(ctx.getText())
+		if(ctx.NOME_LABEL().getText() not in self.tabelaLabels.keys()):
+			self.tabelaLabels[ctx.NOME_LABEL().getText()] = True
+		else:
+			self.errors += "Linha " + str(ctx.NOME_LABEL().start.line) + ": label já definida anteriormente.\n"
+		print(ctx.NOME_LABEL().getText())
+		return
 
 	# Visit a parse tree produced by fluxParser#loop.
 
 	def visitLoop(self, ctx:fluxParser.LoopContext):
-		print(ctx.getText())
+		return
 
 	# Visit a parse tree produced by fluxParser#acao.
 
 	def visitAcao(self, ctx:fluxParser.AcaoContext):
-		print(ctx.getText())
+		return

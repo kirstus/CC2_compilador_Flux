@@ -4,7 +4,7 @@ from fluxListener import fluxListener
 from fluxParser import fluxParser
 from fluxVisitor import fluxVisitor
 from fluxErrorHandler import fluxErrorHandler
-#from fluxSemantics import fluxSemantics
+from fluxSemantics import fluxSemantics
 import argparse
 
 parser = argparse.ArgumentParser(description='Compiler for fluxograms made with the FluX language', add_help=True)
@@ -35,19 +35,20 @@ parser._listeners = [fluxErrorHandler(saida)]
 tree = parser.fluxograma()
 
 # Análise semântica
-#semantic = fluxSemantics()
-#semantic.visit(tree)
+semantic = fluxSemantics()
+semantic.visit(tree)
 
 #abrir arquivo de saída semântica
 #saida_semantic = open(args.output, "w+")
 
 #tratamento de erros semanticos (implementado em fluxSemantics)
-'''if(semantic.errors):
-	saida_semantic.write(semantic.errors)
-	saida_semantic.write("Fim da compilacao\n")
+if(semantic.errors):
+	#saida_semantic.write(semantic.errors)
+	#saida_semantic.write("Fim da compilacao\n")
 	print(semantic.errors)
+	print("Fim da compilacao\n")
 	exit()
-else:
+'''else:
 	for linha in semantic.codigo:
 		saida.write(linha)
 		print(linha)
