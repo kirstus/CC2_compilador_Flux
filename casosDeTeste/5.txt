@@ -1,6 +1,3 @@
-"Begin";
-"End";
-return;
-"Begin";
+"Begin" ["Use PC"] ;
 "End";
 return;

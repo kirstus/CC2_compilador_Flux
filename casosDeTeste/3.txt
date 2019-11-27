@@ -13,4 +13,3 @@ if("User is holding `F1`") {
 } else {
 	"Boot from hard drive";
 } endif
-"End of booting";
