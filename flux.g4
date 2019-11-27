@@ -1,7 +1,7 @@
 grammar flux;
 
-fluxograma : grafo+ EOF ;
-grafo :caixa+ retorno?;
+fluxograma : grafo EOF ;
+grafo :caixa retorno?;
 caixa :decisao | label | loop |acao;
 decisao : cmdSe | cmdSwitch;
 retorno : 'return' ';' |'return' caixa;
@@ -15,7 +15,7 @@ condicao : '(' STRING ')' ;
 subgrafo : '{'  grafo '}';
 label : NOME_LABEL ':';
 loop : 'goto' NOME_LABEL ';' | 'loop' NOME_LABEL ';';
-acao : STRING ('['STRING']')? ';';
+acao : STRING ('['STRING']')? ';' grafo?;
 
 OPSETA: '=>' ;
 STRING : '"' ~('"')* '"';

@@ -11,37 +11,35 @@ class fluxSemantics(fluxVisitor):
 	 # Visit a parse tree produced by fluxParser#fluxograma.
 
 	def visitFluxograma(self, ctx:fluxParser.FluxogramaContext):
-		for graph in ctx.grafo():
-			self.visitGrafo(graph)
+		self.visitGrafo(ctx.grafo())
 
 	# Visit a parse tree produced by fluxParser#grafo.
 
-	def visitGrafo(self, ctx:fluxParser.GrafoContext):
-		for box in ctx.caixa():
-			self.visitCaixa(box)
+	def visitGrafo(self, ctx:fluxParser.GrafoContext, subgraphType = None):
+		self.visitCaixa(ctx.caixa(), subgraphType)
 		if (ctx.retorno() != None):
 			self.visitRetorno(ctx.retorno())
 
 
 	# Visit a parse tree produced by fluxParser#caixa.
 
-	def visitCaixa(self, ctx:fluxParser.CaixaContext):
+	def visitCaixa(self, ctx:fluxParser.CaixaContext, subgraphType = None):
 		if (ctx.decisao() != None):
-			self.visitDecisao(ctx.decisao())
+			self.visitDecisao(ctx.decisao(), subgraphType)
 		if (ctx.label() != None):
 			self.visitLabel(ctx.label())
 		if (ctx.loop() != None):
 			self.visitLoop(ctx.loop())
 		if (ctx.acao() != None):
-			self.visitAcao(ctx.acao())
+			self.visitAcao(ctx.acao(), subgraphType)
 
 	# Visit a parse tree produced by fluxParser#decisao.
 
-	def visitDecisao(self, ctx:fluxParser.DecisaoContext):
+	def visitDecisao(self, ctx:fluxParser.DecisaoContext, subgraphType = None):
 		if (ctx.cmdSe() != None):
-			self.visitCmdSe(ctx.cmdSe())
+			self.visitCmdSe(ctx.cmdSe(), subgraphType)
 		if (ctx.cmdSwitch() != None):
-			self.visitCmdSwitch(ctx.cmdSwitch())
+			self.visitCmdSwitch(ctx.cmdSwitch(), subgraphType)
 
 	# Visit a parse tree produced by fluxParser#retorno.
 
@@ -51,20 +49,20 @@ class fluxSemantics(fluxVisitor):
 
 	# Visit a parse tree produced by fluxParser#cmdSe.
 
-	def visitCmdSe(self, ctx:fluxParser.CmdSeContext):
-		self.visitCondicao(ctx.condicao())
-		self.visitSubgrafo(ctx.subgrafo())
+	def visitCmdSe(self, ctx:fluxParser.CmdSeContext, subgraphType = None):
+		self.visitCondicao(ctx.condicao(), subgraphType)
+		self.visitSubgrafo(ctx.subgrafo(), "True")
 		if(ctx.cmdElse() != None):
 			self.visitCmdElse(ctx.cmdElse())
 
 	# Visit a parse tree produced by fluxParser#cmdElse.
 
 	def visitCmdElse(self, ctx:fluxParser.CmdElseContext):
-		self.visitSubgrafo(ctx.subgrafo())
+		self.visitSubgrafo(ctx.subgrafo(), "False")
 
 	# Visit a parse tree produced by fluxParser#cmdSwitch.
 
-	def visitCmdSwitch(self, ctx:fluxParser.CmdSwitchContext):
+	def visitCmdSwitch(self, ctx:fluxParser.CmdSwitchContext, subgraphType = None):
 		self.visitCondicao(ctx.condicao())
 		self.visitCasos(ctx.casos())
 
@@ -97,13 +95,16 @@ class fluxSemantics(fluxVisitor):
 
 	# Visit a parse tree produced by fluxParser#condicao.
 
-	def visitCondicao(self, ctx:fluxParser.CondicaoContext):
+	def visitCondicao(self, ctx:fluxParser.CondicaoContext, subgraphType = None):
+		print("Condition: " + ctx.STRING().getText())
+		if(subgraphType != None):
+			print(f"Label: {subgraphType}")
 		return
 
 	# Visit a parse tree produced by fluxParser#subgrafo.
 
-	def visitSubgrafo(self, ctx:fluxParser.SubgrafoContext):
-		self.visitGrafo(ctx.grafo())
+	def visitSubgrafo(self, ctx:fluxParser.SubgrafoContext, subgraphType = None):
+		self.visitGrafo(ctx.grafo(), subgraphType)
 
 	# Visit a parse tree produced by fluxParser#label.
 
@@ -122,5 +123,13 @@ class fluxSemantics(fluxVisitor):
 
 	# Visit a parse tree produced by fluxParser#acao.
 
-	def visitAcao(self, ctx:fluxParser.AcaoContext):
+	def visitAcao(self, ctx:fluxParser.AcaoContext, subgraphType = None):
+		print("Action: " + ctx.STRING()[0].getText())
+		if(subgraphType != None):
+			print(f"Label: {subgraphType}")
+		if(ctx.grafo() != None):
+			if(ctx.STRING()[1] != None):
+				self.visitGrafo(ctx.grafo(), ctx.STRING()[1].getText())
+			else:
+				self.visitGrafo(ctx.grafo(), None)
 		return
