@@ -3,6 +3,7 @@ from fluxListener import fluxListener
 from fluxParser import fluxParser
 from fluxVisitor import fluxVisitor
 import re #Regular expressions
+import pydot
 
 class fluxSemantics(fluxVisitor):
 	errors = ""
@@ -11,10 +12,37 @@ class fluxSemantics(fluxVisitor):
 	nodesList = {}
 	boxList = {}
 
-	 # Visit a parse tree produced by fluxParser#fluxograma.
+	def draw(self):
+		#debug
+		print('labels',self.tabelaLabels)
+		print('nicknames',self.nicknamesDictionary)
+		print('nodes',self.nodesList)
+		print('boxs',self.boxList)
+		print('------')
+		for k in self.nodesList:
+			print(self.nodesList[k])
+		print('------')
+		#debug
+
+		graph = pydot.Dot(graph_type='digraph')
+		visualNodes = {}
+		for box in self.boxList.keys():
+			visualNodes[box] = pydot.Node(box, style="filled", fillcolor="orange",shape=self.boxList[box])
+			graph.add_node(visualNodes[box])
+
+		for father in self.nodesList.keys():
+			for (son,slabel) in self.nodesList[father]:
+				graph.add_edge(pydot.Edge(visualNodes[father], visualNodes[son] , label=slabel))
+			print(son,slabel)
+		graph.write_png('grafo.png')
+
+
+	# Visit a parse tree produced by fluxParser#fluxograma.
 
 	def visitFluxograma(self, ctx:fluxParser.FluxogramaContext):
 		self.visitGrafo(ctx.grafo())
+		self.draw()
+
 
 	# Visit a parse tree produced by fluxParser#grafo.
 
@@ -101,9 +129,9 @@ class fluxSemantics(fluxVisitor):
 
 		if(father != None):
 			if(father in self.nodesList.keys()):
-				self.nodesList[father] = self.nodesList[father] + (ctx.STRING().getText(), label)
+				self.nodesList[father].append((ctx.STRING().getText(), label))
 			else:
-				self.nodesList[father] = (ctx.STRING().getText(), label)
+				self.nodesList[father] = [(ctx.STRING().getText(), label)]
 
 		if(nickname != None):
 			self.nicknamesDictionary[nickname] = ctx.STRING().getText()
@@ -137,9 +165,9 @@ class fluxSemantics(fluxVisitor):
 	def visitLoop(self, ctx:fluxParser.LoopContext, label = None, father = None):
 		if(father != None):
 			if(father in self.nodesList.keys()):
-				self.nodesList[father] = self.nodesList[father] + (self.nicknamesDictionary[ctx.NOME_LABEL().getText()], label)
+				self.nodesList[father].append((self.nicknamesDictionary[ctx.NOME_LABEL().getText()], label))
 			else:
-				self.nodesList[father] = (self.nicknamesDictionary[ctx.NOME_LABEL().getText()], label)
+				self.nodesList[father] = [(self.nicknamesDictionary[ctx.NOME_LABEL().getText()], label)]
 		return
 
 	# Visit a parse tree produced by fluxParser#acao.
@@ -149,9 +177,9 @@ class fluxSemantics(fluxVisitor):
 
 		if(father != None):
 			if(father in self.nodesList.keys()):
-				self.nodesList[father] = self.nodesList[father] + (ctx.STRING()[0].getText(), label)
+				self.nodesList[father].append((ctx.STRING()[0].getText(), label))
 			else:
-				self.nodesList[father] = (ctx.STRING()[0].getText(), label)
+				self.nodesList[father] = [(ctx.STRING()[0].getText(), label)]
 
 		if(nickname != None):
 			self.nicknamesDictionary[nickname] = ctx.STRING()[0].getText()
