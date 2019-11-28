@@ -48,8 +48,6 @@ if(semantic.errors):
 	print(semantic.errors)
 	print("Fim da compilacao\n")
 	exit()
-'''else:
-	for linha in semantic.codigo:
-		saida.write(linha)
-		print(linha)
-	exit()'''
+else:
+	print(semantic.nodesList)
+	exit()

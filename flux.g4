@@ -8,12 +8,12 @@ retorno : 'return' ';' |'return' caixa;
 cmdSe : 'if' condicao subgrafo cmdElse? 'endif';
 cmdElse: 'else' subgrafo;
 cmdSwitch : 'switch' condicao '{' casos '}';
-casos : caso+ implicacao?;
+casos : caso+;
 caso : STRING implicacao;
 implicacao : OPSETA subgrafo ('break' ';')?;
 condicao : '(' STRING ')' ;
 subgrafo : '{'  grafo '}';
-label : NOME_LABEL ':';
+label : NOME_LABEL ':' grafo?;
 loop : 'goto' NOME_LABEL ';' | 'loop' NOME_LABEL ';';
 acao : STRING ('['STRING']')? ';' grafo?;
 
