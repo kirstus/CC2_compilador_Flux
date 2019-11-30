@@ -32,8 +32,11 @@ class fluxSemantics(fluxVisitor):
 
 		for father in self.nodesList.keys():
 			for (son,slabel) in self.nodesList[father]:
-				graph.add_edge(pydot.Edge(visualNodes[father], visualNodes[son] , label=slabel))
+				graph.add_edge(pydot.Edge(visualNodes[father], visualNodes[son] , label=slabel if slabel!=None else ' '))
 			print(son,slabel)
+		print('++++')
+		print(graph.to_string())
+		print('++++')
 		graph.write_png('grafo.png')
 
 
