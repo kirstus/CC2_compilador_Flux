@@ -1,5 +1,5 @@
-if("User selected Network") {
-    	"Boot from Network";
+if("Condição 1") {
+    	"Ação 1";
 } else {
-        "Boot Normally";
+        "Ação 2";
 } endif

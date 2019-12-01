@@ -1,15 +1,17 @@
-switch ("What do you want to eat today?") {
-  "Vegetarian" => {"Grab a falafel";}
-  "Beef" => {"Grab beef kebab";}
-  "Not hungry" => {
-    if ("Would you like something to drink?") {
-      if ("Beer or wine") {
-        "Pour drink";
+switch ("Qual será a refeição?") {
+  "Vegetariana" => {"Macarrão com molho branco";}
+  "Vegana" => {"Sopa de lentilha";}
+  "Outros" => {"Costela defumada";}
+  "Sem fome" => {
+    if ("beleza, mas você quer beber?") {
+      if ("Cerveja?") {
+        "Sim, Skol";
       } else {
-        "Pour water";
+        "Só água";
       }endif
     } else {
-      "Let me know whenver you change your bind";
+      "Me avise caso mude de ideia";
     }endif
   }
 }
+

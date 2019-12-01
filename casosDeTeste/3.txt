@@ -1,15 +1,15 @@
-"Booting of computer.";
-if("User is holding `F1`") {
-	"Display booting menu";
-	if("User selected **Network**") {
-		"Boot from Network";
+"Ligando o computador";
+if("Você digita a senha errada") {
+	"Seu computador vai explodir em 3..2...1";
+} else {
+	if("Você tem muitas provas chegando?") {
+		"Vá estudar";
 	} else {
-		if("User selected **CDROM**") {
-			"Boot from CDROM";
+		if("Tem certeza?") {
+			"Vá jogar lolzinho";
   		} else {
-    			"Boot from default";
+    		"Sério, vá estudar";
 		} endif
 	} endif
-} else {
-	"Boot from hard drive";
 } endif
+

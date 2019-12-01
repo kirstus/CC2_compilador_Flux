@@ -1,7 +1,7 @@
-"Client enters";
-before_check:
-if("Client happy?")
-  "Smile more and be nicer";
-  loop before_check;
+"Client entra";
+label_antes_do_if:
+if("Cliente está feliz?")
+  "Sorria e seja simpático";
+  loop label_antes_do_if;
 endif
-"Client leaves";
+

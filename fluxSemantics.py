@@ -27,7 +27,10 @@ class fluxSemantics(fluxVisitor):
 		graph = pydot.Dot(graph_type='digraph')
 		visualNodes = {}
 		for box in self.boxList.keys():
-			visualNodes[box] = pydot.Node(box, style="filled", fillcolor="orange",shape=self.boxList[box])
+			if (self.boxList[box] == "box"):
+				visualNodes[box] = pydot.Node(box, style="filled", fillcolor="lightblue2",shape=self.boxList[box])
+			else:
+				visualNodes[box] = pydot.Node(box, style="filled", fillcolor="orange1",shape=self.boxList[box])
 			graph.add_node(visualNodes[box])
 
 		for father in self.nodesList.keys():
@@ -158,7 +161,7 @@ class fluxSemantics(fluxVisitor):
 		if(ctx.NOME_LABEL().getText() not in self.tabelaLabels.keys()):
 			self.tabelaLabels[ctx.NOME_LABEL().getText()] = True
 		else:
-			self.errors += "Linha " + str(ctx.NOME_LABEL().start.line) + ": label já definida anteriormente.\n"
+			self.errors += "Label " + str(ctx.NOME_LABEL().getText()) + ": já definida anteriormente.\n"
 		if(ctx.grafo() != None):
 			self.visitGrafo(ctx.grafo(), label, father, ctx.NOME_LABEL().getText())
 		return

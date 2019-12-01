@@ -1,9 +1,11 @@
-  if("User selected Network") {
-    	"Boot from Network";
+  if("Está frio?") {
+    	"Sobremesa é chocolate quente";
   } else {
-	if ("PC is broken") {
-		"Shutdown" ;
+	if ("Voce tem ar condicionado?") {
+		"Sobremesa continua sendo chocolate";
 	} else {
-        	"Boot Normally";
+       	"Sorvete";
 	} endif
 } endif
+
+
